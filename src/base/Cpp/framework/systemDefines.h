@@ -74,11 +74,27 @@
     // #  endif
     // # endif
     // #endif /* NDEBUG.  */
-      	
-  	
-# else //Windows
+# elif defined(__sun)
 /**
- * Non-Windows System Definitions section
+ * Solaris System Definitions section
+ */
+
+#define getpid() _getpid()
+	#define getpid() getpid()
+	const char PATH_SEPARATOR ='/';
+	const std::string PATH_SEPARATOR_STRING ="/";
+	typedef uint8_t uint8;
+	typedef uint16_t uint16;
+	typedef uint32_t uint32;
+	typedef uint64_t uint64;
+	inline static void debug_backtrace(std::stringstream & ss, const int & backtraceBufferSize){
+		//on Solaris systems this does nothing (for now)
+	}
+	# define __ASSERT_FUNCTION	((const char *) 0)
+
+# else
+/**
+ * Non-Windows and non-Solaris System Definitions section
  */
 	/*
 	 * TODO differentiate between linux installations (debian, arch,red hat...)
@@ -93,7 +109,7 @@
 	typedef uint16_t uint16;
 	typedef uint32_t uint32;
 	typedef uint64_t uint64;
-	
+
   #include <execinfo.h>
 	inline static void debug_backtrace(std::stringstream & ss, const int & backtraceBufferSize){
 	  int nptrs;
@@ -123,19 +139,29 @@
 	 * The following code was extracted from assert.h without modification.
 	 */
   #ifdef NDEBUG
-  	/* Version 2.4 and later of GCC define a magical variable `__PRETTY_FUNCTION__'
+  // Defines gi__GNUC_PREREQ if glibc's features.h isn't available.
+  # ifndef __GNUC_PREREQ
+  #  if defined(__GNUC__) && defined(__GNUC_MINOR__)
+  #   define __GNUC_PREREQ(maj, min) \
+         ((__GNUC__ << 16) + __GNUC_MINOR__ >= ((maj) << 16) + (min))
+  #  else
+  #   define __GNUC_PREREQ(maj, min) 0
+  #  endif
+  # endif
+
+	/* Version 2.4 and later of GCC define a magical variable `__PRETTY_FUNCTION__'
   	 which contains the name of the function currently being defined.
   	 This is broken in G++ before version 2.6.
   	 C9x has a similar variable called __func__, but prefer the GCC one since
-  	 it demangles C++ function names.  */
-  # if defined __cplusplus ? __GNUC_PREREQ (2, 6) : __GNUC_PREREQ (2, 4)
-  #   define __ASSERT_FUNCTION	__extension__ __PRETTY_FUNCTION__
+  	 it demangles C++ function names.
+  	 On Clang, we assume `__PRETTY_FUNCTION__` is always available.
+  	 */
+  # if defined __clang__ || (defined __cplusplus ? __GNUC_PREREQ (2, 6) : __GNUC_PREREQ (2, 4))
+  #	 define __ASSERT_FUNCTION	__extension__ __PRETTY_FUNCTION__
+  # elif defined __STDC_VERSION__ && __STDC_VERSION__ >= 199901L
+  #  define __ASSERT_FUNCTION	__func__
   # else
-  #  if defined __STDC_VERSION__ && __STDC_VERSION__ >= 199901L
-  #   define __ASSERT_FUNCTION	__func__
-  #  else
-  #   define __ASSERT_FUNCTION	((const char *) 0)
-  #  endif
+  #  define __ASSERT_FUNCTION	((const char *) 0)
   # endif
   #endif /* NDEBUG.  */
   	
