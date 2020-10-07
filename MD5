@@ -1,4 +1,4 @@
-b9eb4618f39ed40ff4e1189c4b09f619 *DESCRIPTION
+c2334ffc92efe9b53abb17b08a3834e1 *DESCRIPTION
 d88110fbd327b2a739f60f6fa1c007ee *NAMESPACE
 366c411eb856ced76869152306db7d2c *R/ALGORITHM-dev.R
 b77e8c1bf3221ff34f0157d7850b3af3 *R/ALGORITHM.R
@@ -17,7 +17,7 @@ d3bf95063febb64dc3a26431a2dad6b9 *R/DynCommPostProcessR.R
 8e80d4ce7004361db7b3ec79a0206983 *R/postProcessDensOpt.R
 878124e81bef3f2ad54aa0df82233657 *R/zzz.R
 502c5165e59deb97d76911bd604db678 *README.md
-c4065cb02b46b66e5f37731ec1e42874 *build/partial.rdb
+841c365ce6450451056d069d6591cb18 *build/partial.rdb
 0592930587881c00b7295d716ff912e6 *inst/REFERENCES.bib
 0994373c21e6741ad1a99608f6cc803e *inst/extdata/graphAddRemoveFile.txt
 13743213a94ac9d305d5d4984e1e443c *man/ALGORITHM-dev.Rd
@@ -64,7 +64,7 @@ f5f84391eb06537f1ba07ef2625b8525 *man/postProcessDensOpt.Rd
 29a146b5a75f9d43d0c651ab81390cc6 *src/RcppExports.cpp
 2515364fbce8d7e2e1bd8ac1abd0caa5 *src/base/Cpp/DynCommBase.h
 992a637d48bbeeeda28a8361e0f12ed5 *src/base/Cpp/algorithms/algorithmList.h
-dd910929f87e8fd5a754dc3e97d4d9ec *src/base/Cpp/algorithms/algorithmLouvain.h
+7669032ff7077dee58daf42b09209b98 *src/base/Cpp/algorithms/algorithmLouvain.h
 2a16009a39858b7ac88bf0520a35c9bd *src/base/Cpp/criterion/criterionBalMod.h
 da7ee53c4883aca7856f177aa98f4f59 *src/base/Cpp/criterion/criterionModularity.h
 df45d5d394014f0ad51f5dab97b6c16c *src/base/Cpp/framework/DynCommBaseInterface.h
@@ -79,12 +79,12 @@ bca5294f016699782464c4fa82bfc9f7 *src/base/Cpp/framework/criterion/criterionInte
 9158c04402f47860a5aefbe5e88fc17f *src/base/Cpp/framework/debug/DebugLog.h
 be409a91be27d614db8c61766c20909d *src/base/Cpp/framework/debug/debugUtilities.h
 7bd9159b8df015acdb0466603c50c363 *src/base/Cpp/framework/debug/debugging.h
-6038981a46ece32d4b1d28bf8926af84 *src/base/Cpp/framework/debug/debuggingInternals.h
+3f96ffe6b7ea3fe2e96d4d2f6a6bfe24 *src/base/Cpp/framework/debug/debuggingInternals.h
 eee0dde99473454d6719f985c33c6dd4 *src/base/Cpp/framework/defines.h
 3f18a45f453a9cf8cfc8ddb50521f353 *src/base/Cpp/framework/graph/edge.h
 ca39fee99a9eeb39ce07d1499f659f48 *src/base/Cpp/framework/graph/graphInterface.h
 76a2f418c8030c29da6f8742fc892498 *src/base/Cpp/framework/graph/graphUndirected.h
-71689f7f8041f40e4819f8b9d6a58ff7 *src/base/Cpp/framework/graph/graphUndirectedGroupable.h
+c064f0b348901b8ecf82350ac26764a9 *src/base/Cpp/framework/graph/graphUndirectedGroupable.h
 8f0268cafc1977860422ea034c051a3d *src/base/Cpp/framework/graph/mapReversable.h
 349ec94dfafca35eb5aea1adfe67f85a *src/base/Cpp/framework/graph/mapUtilities.h
 3680084c781aa6639b2360f19c52dd72 *src/base/Cpp/framework/graph/multimapReversable.h
@@ -94,7 +94,7 @@ ca39fee99a9eeb39ce07d1499f659f48 *src/base/Cpp/framework/graph/graphInterface.h
 f36c6b7a5c411cd753658932f8f82557 *src/base/Cpp/framework/io/writer.h
 81b394eb1e7fe59c3d8f5f50e79c017a *src/base/Cpp/framework/program.h
 511c0a843c3015a8f9f02c5eccf83a23 *src/base/Cpp/framework/systemDefines.h
-0a34fa4d9240e190ab6fd24b6b42d18d *src/base/Cpp/framework/time/timeFunctions.h
+47ed7ad034107655f84b04db013b0eec *src/base/Cpp/framework/time/timeFunctions.h
 23683b06cb4daee753bb523f63d6b268 *src/base/Cpp/framework/time/timeKeeper.h
 6695fada096ff128a4210cffe0e2769f *src/base/Cpp/framework/utilities/stringFormatter.h
 d41d8cd98f00b204e9800998ecf8427e *tests/testthat.R
